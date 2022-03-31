@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        .container{
+            border: 3px solid black;
+            border-radius: 10px;
+            width: 60%;
+            padding: 20px;
+            display: none;
+            }
+        button{
+            margin-top:10px;
+        }
+        
+    
+    </style>
+</head>
+<body>
+    
+    </div>
+    <div class="container">
+        Q1 what is 1+1?<hr>
+        <input type="radio" name="question1">1<br>
+        <input type="radio" name="question1" id="correct1">2<br>
+        <input type="radio" name="question1">3<br>
+        <input type="radio" name="question1">4<br>
+        <button class="next" onclick="next(1)">Next</button>
+    </div>
+    <div class="container">
+        Q2 what is 2+2?<hr>
+        <input type="radio" name="question2">1<br>
+        <input type="radio" name="question2">2<br>
+        <input type="radio" name="question2">3<br>
+        <input type="radio" name="question2" id="correct2">4<br>
+        <button class="next" onclick="next(2)">Next</button>
+    </div>
+    <div class="container">
+        Q3 what is 1+2?<hr>
+        <input type="radio" name="question3">1<br>
+        <input type="radio" name="question3">2<br>
+        <input type="radio" name="question3" id="correct3">3<br>
+        <input type="radio" name="question3">4<br>
+        <button class="next" onclick="next(3)">Next</button>
+    </div>
+    <div class="container">
+        Q4 what is 1+0?<hr>
+        <input type="radio" name="question4" id="correct4">1<br>
+        <input type="radio" name="question4">2<br>
+        <input type="radio" name="question4">3<br>
+        <input type="radio" name="question4">4<br>
+        <button onclick="result()">Submit Quiz</button>
+    </div>
+    
+    <script>
+        
+        document.getElementsByClassName("container")[0].style.display = "block";
+
+        function next(id){
+            document.getElementsByClassName("container")[id-1].style.display = "none";
+            document.getElementsByClassName("container")[id].style.display = "block";
+        }
+
+        function result(){
+            var score = 0;
+            if(document.getElementById("correct1").checked){
+                score++;
+            }
+            if(document.getElementById("correct2").checked){
+                score++;
+            }
+            if(document.getElementById("correct3").checked){
+                score++;
+            }
+            if(document.getElementById("correct4").checked){
+                score++;
+            }
+            alert ("your score is:"+ score);
+        }
+    
+    </script>
+</body>
+</html>
